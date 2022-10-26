@@ -26,36 +26,82 @@ FAIL src/components/TwoDice.test.tsx
 
       at Object.<anonymous> (src/components/TwoDice.test.tsx:40:32)
 
+PASS src/bad-components/ChooseTeam.test.tsx
+PASS src/bad-components/DoubleHalf.test.tsx
 PASS src/functions.test.ts
 PASS src/components/ChangeType.test.tsx
 PASS src/components/CycleHoliday.test.tsx
 PASS src/components/Counter.test.tsx
 PASS src/components/RevealAnswer.test.tsx
-PASS src/App.test.tsx
--------------------|---------|----------|---------|---------|-------------------
-File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
--------------------|---------|----------|---------|---------|-------------------
-All files          |   99.17 |       97 |      99 |   99.15 |                   
- src               |   99.42 |      100 |   98.68 |    99.4 |                   
-  App.tsx          |      50 |      100 |      50 |      50 | 39                
-  arrays.ts        |     100 |      100 |     100 |     100 |                   
-  functions.ts     |     100 |      100 |     100 |     100 |                   
-  nested.ts        |     100 |      100 |     100 |     100 |                   
-  objects.ts       |     100 |      100 |     100 |     100 |                   
- src/components    |   98.52 |     92.5 |     100 |   98.52 |                   
-  ChangeType.tsx   |     100 |      100 |     100 |     100 |                   
-  Counter.tsx      |     100 |      100 |     100 |     100 |                   
-  CycleHoliday.tsx |   97.14 |       90 |     100 |   97.14 | 18                
-  RevealAnswer.tsx |     100 |      100 |     100 |     100 |                   
-  StartAttempt.tsx |     100 |      100 |     100 |     100 |                   
-  TwoDice.tsx      |     100 |      100 |     100 |     100 |                   
- src/interfaces    |       0 |        0 |       0 |       0 |                   
-  answer.ts        |       0 |        0 |       0 |       0 |                   
-  question.ts      |       0 |        0 |       0 |       0 |                   
--------------------|---------|----------|---------|---------|-------------------
+FAIL src/bad-components/ColoredBox.test.tsx
+  ● ColoredBox Component tests › Clicking the button advances the color.
 
-Test Suites: 1 failed, 10 passed, 11 total
-Tests:       1 failed, 92 passed, 93 total
+    expect(element).toHaveStyle()
+
+    - Expected
+
+    - backgroundColor: green;
+
+      21 |         });
+      22 |         nextColor.click();
+    > 23 |         expect(screen.getByTestId("colored-box")).toHaveStyle({
+         |                                                   ^
+      24 |             backgroundColor: "green"
+      25 |         });
+      26 |         nextColor.click();
+
+      at Object.<anonymous> (src/bad-components/ColoredBox.test.tsx:23:51)
+
+FAIL src/bad-components/ShoveBox.test.tsx
+  ● ShoveBox Component tests › Clicking the button moves the box.
+
+    expect(element).toHaveStyle()
+
+    - Expected
+
+    - marginLeft: 18px;
+
+      21 |         });
+      22 |         shoveBox.click();
+    > 23 |         expect(screen.getByTestId("moveable-box")).toHaveStyle({
+         |                                                    ^
+      24 |             marginLeft: "18px"
+      25 |         });
+      26 |         shoveBox.click();
+
+      at Object.<anonymous> (src/bad-components/ShoveBox.test.tsx:23:52)
+
+PASS src/App.test.tsx
+----------------------|---------|----------|---------|---------|-------------------
+File                  | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+----------------------|---------|----------|---------|---------|-------------------
+All files             |    98.9 |    96.07 |   99.17 |   98.87 |                   
+ src                  |   99.42 |      100 |   98.68 |    99.4 |                   
+  App.tsx             |      50 |      100 |      50 |      50 | 43                
+  arrays.ts           |     100 |      100 |     100 |     100 |                   
+  functions.ts        |     100 |      100 |     100 |     100 |                   
+  nested.ts           |     100 |      100 |     100 |     100 |                   
+  objects.ts          |     100 |      100 |     100 |     100 |                   
+ src/bad-components   |   96.87 |       50 |     100 |   96.66 |                   
+  ChooseTeam.tsx      |     100 |       50 |     100 |     100 | 18                
+  ColoredBox.tsx      |     100 |      100 |     100 |     100 |                   
+  DoubleHalf.tsx      |     100 |      100 |     100 |     100 |                   
+  DoubleHalfState.tsx |       0 |      100 |     100 |       0 | 3                 
+  ShoveBox.tsx        |     100 |      100 |     100 |     100 |                   
+ src/components       |   98.52 |     92.5 |     100 |   98.52 |                   
+  ChangeType.tsx      |     100 |      100 |     100 |     100 |                   
+  Counter.tsx         |     100 |      100 |     100 |     100 |                   
+  CycleHoliday.tsx    |   97.14 |       90 |     100 |   97.14 | 18                
+  RevealAnswer.tsx    |     100 |      100 |     100 |     100 |                   
+  StartAttempt.tsx    |     100 |      100 |     100 |     100 |                   
+  TwoDice.tsx         |     100 |      100 |     100 |     100 |                   
+ src/interfaces       |       0 |        0 |       0 |       0 |                   
+  answer.ts           |       0 |        0 |       0 |       0 |                   
+  question.ts         |       0 |        0 |       0 |       0 |                   
+----------------------|---------|----------|---------|---------|-------------------
+
+Test Suites: 3 failed, 12 passed, 15 total
+Tests:       3 failed, 107 passed, 110 total
 Snapshots:   0 total
-Time:        7.548 s
+Time:        11.419 s
 Ran all test suites.
